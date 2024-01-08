@@ -4,7 +4,7 @@
 # This line specifies the base image for the Docker container. The image used here is python:3, which is the official Python 3 image. The Docker container built using this Dockerfile will have the same environment as the Python 3 image.
 
 # A base image is the image that is used to create all of your container images. Your base image can be an official Docker image, such as Centos, or you can modify an official Docker image to suit your needs, or you can create your own base image from scratch. Parent topic: Docker.
-FROM python:3
+FROM python:3.10-slim
 
 # This line sets the environment variable PYTHONDONTWRITEBYTECODE to 1. This environment variable is used to prevent Python from writing .pyc files, which are compiled Python files, to the file system.
 
