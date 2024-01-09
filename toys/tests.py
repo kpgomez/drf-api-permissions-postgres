@@ -33,7 +33,7 @@ class ToyTests(APITestCase):
         self.assertEqual(actual_description, "cute doll")
 
     def test_get_toy_list(self):
-        url = reverse(toy_list)
+        url = reverse("toy_list")
         response = self.client.get(url)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         toys = response.data
