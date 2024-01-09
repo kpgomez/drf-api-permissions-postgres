@@ -1,4 +1,3 @@
-# from django.test import TestCase
 from django.contrib.auth import get_user_model
 from django.urls import reverse
 from rest_framework import status
@@ -24,7 +23,7 @@ class ToyTests(APITestCase):
 
         test_toy.save()
 
-    def test_toys_model(self):
+    def test_toy_model(self):
         toy = Toy.objects.get(id=1)
         actual_purchaser = str(toy.purchaser)
         actual_title = str(toy.title)
@@ -74,3 +73,6 @@ class ToyTests(APITestCase):
     def test_delete_toy(self):
         url = reverse("toy_detail", args=(1,))
         response = self.client.delete(url)
+        self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
+        toys = Toy.objects.all()
+        self.assertEqual(len(toys), 0)
