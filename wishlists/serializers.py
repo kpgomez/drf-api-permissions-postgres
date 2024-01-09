@@ -4,5 +4,5 @@ from .models import Wishlist
 
 class WishlistSerializer(serializers.ModelSerializer):
     class Meta:
-        fields = ("id", "owner", "things")
+        fields = ("id", "owner", "toys")
         model = Wishlist
